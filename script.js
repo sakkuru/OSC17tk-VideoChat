@@ -5,7 +5,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
         const peer = new Peer({ key: "3197c5d7-0541-4131-92bb-75c8f45eefb4" });
 
         peer.on('open', () => {
-            const sfuRoom = peer.joinRoom('testRoom', { mode: 'sfu', stream: stream });
+            const sfuRoom = peer.joinRoom(roomName, { mode: 'sfu', stream: stream });
             sfuRoom.on('stream', remoteStream => {
                 const streamURL = URL.createObjectURL(remoteStream);
                 const remoteId = remoteStream.peerId;
