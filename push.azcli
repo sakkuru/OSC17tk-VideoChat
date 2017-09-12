@@ -1,0 +1,4 @@
+az appservice plan create --name b1-jp-east --resource-group osc-demo
+az webapp create --name osc-videochat --resource-group osc-demo --plan b1-jp-east
+az webapp deployment source config --repo-url https://github.com/sakkuru/OSC17tk-VideoChat.git --branch azure-push --name osc-videochat --resource-group osc-demo
+az webapp browse --name osc-videochat --resource-group osc-demo
